@@ -1,8 +1,9 @@
 :root {
     --offred: rgb(127, 38, 57);
     --offwhite: rgb(255, 238, 223);
-    --offblue: rgb(63, 89, 124);
-    --offorange: rgb(247, 132, 38);
+    /*--offblue: rgb(63, 89, 124);*/
+    --offblue: rgb(127, 38, 57);
+    --offorange: rgb(201, 141, 141);
     --offgray: rgb(139, 141, 145);
     --navbar: 70px;
     --footer: 48px;
@@ -31,12 +32,16 @@ h2 {
     text-align: left;
 }
 
-h3, h4, h5, h6 {
+.name {
     font-family: 'Bonheur Royale', sans-serif !important;
 }
 
+.event h4, .event h6 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
 a {
-    color: inherit !important;
+    color: var(--offgray) !important;
 }
 
 a:hover {
@@ -46,6 +51,7 @@ a:hover {
 p {
     font-family:'Nanum Gothic', 'Times New Roman', serif;
     font-weight: 100;
+    margin: 0 !important;
 }
  
 html{
@@ -63,8 +69,15 @@ html{
 }
 
 #wrapper {
-    background-color: var(--offblue);
     padding-bottom: var(--footer);
+}
+
+.container {
+    padding: calc(var(--navbar) + 10px) 10% 0 10% !important;
+}
+
+.container-fluid {
+    padding: calc(var(--navbar) + 10px) 10% 0 10% !important;
 }
 
 footer {
@@ -80,73 +93,132 @@ footer {
 /*
 * PHOTOS 
 */
-.container {
-    padding-top: calc(var(--navbar) + 10px);
-    text-align: justify;
-    max-width: 80% !important;
+
+#top {
+    position: relative;
 }
 
-.container-carousel {
-    padding: 0px !important;
+.cover-photo {
+    max-height: 110vh;
+    width: 100vw;
+    object-fit: cover;
+}
+.cover-photo-overlay {
+    background-color: white;
+    opacity: 0.4;
+}
+
+#title {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    text-align: center;
 }
 
 #end-photo {
-    height: 300px;
-    width: inherit;
+    height: 700px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0 60%;
 }
+
+/*
+* GALLERY
+*/
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+.column {
+    max-width: 33.3%;
+    padding: 0 4px;}
+
+.image-container {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    filter: grayscale(1) brightness(0.5);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s linear;
+}
+
+.image-container:hover, .image-container.active {
+    filter: grayscale(0);
+}
+
+
 
 /* 
 * PROFILE PHOTOS AND BIOS 
 */
+
 
 .member {
     flex-direction: column;
     margin: 10px; 
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
-    max-width: 300px;
+    gap: 0.25rem;
+    width: 500px;
     text-align: center;
 }
 
 .member > * {
-    max-height: 300px;
+    max-height: 400px;
     max-width: 100%;
     flex-shrink: 0;
 }
 
 .profile-photo {
-    border-radius: 5px;
+    border-radius: 0.25rem;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.profile-photo:hover {
+.profile-photo:hover, .profile-photo.active {
     opacity: 0.5;
 }
 
-.profile-photo.active {
-    opacity: 10%;
-}
-
-.description {
+.description{
     visibility: hidden;
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 0%) scale(0.2);
+    transform: translate(-50%, 0%) scale(0);
     z-index: 10;
-    padding: 3%;
-    width: fit-content;
-    max-width: 75%;
-    max-height: 60vh;
+    width: 100%;
+    max-height: 75vh;
     overflow-y: auto;
     background-color: rgba(11, 16, 21, 0.9);
     text-align: justify;
     gap: 20px;
+    padding: 0 2rem;
+    align-items: center;
+    justify-content: center;
+    color: var(--offwhite);
 }
 
-.popup.active .description {
+#myCarousel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%) scale(0);
+    z-index: 10;
+}
+
+.carousel-item img{
+    max-width: 80vw;
+    max-height: 75vh;
+}
+
+.popup.active .description, .popup.active #myCarousel {
     visibility: visible;
     transition: all 400ms ease-in-out;
     transform: translate(-50%, -50%) scale(1);
@@ -154,8 +226,13 @@ footer {
 
 .description img {
     object-fit: contain;
-    /* max-width: 40vw; */
-    max-height: 50vh;    
+    height: 75vh;
+    max-height: 500px;
+}
+
+.text {
+    padding: 1rem 0;
+    max-width: 700px;
 }
 
 .description .close-btn {
@@ -177,7 +254,7 @@ footer {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     z-index: 1;
     display: none;
 }
@@ -202,10 +279,11 @@ footer {
     width: 100%;
     border: none;
     background-color: transparent;
+    color: var(--offwhite);
 }
 
 .event-container:hover, .event-container.active{
-    border-left: solid var(--offblue) 5px;
+    border-left: solid var(--offgray) 5px;
 }
 
 .date {
@@ -213,7 +291,8 @@ footer {
     aspect-ratio: 1;
     justify-content: center;
     border-radius: 0.25rem;
-    background-color: var(--offwhite);
+    background-color: var(--offblue);
+    
 }
 
 .content-collapsible {
@@ -241,6 +320,7 @@ footer {
 .repertoire {
     list-style-type: square;
 }
+
 /* 
 * TOP BUTTON
 */
@@ -278,22 +358,20 @@ footer {
 /* 
 * SCREEN SIZE ADJUSTMENT 
 */
-@media (max-width: 767px) {
-    .container {
-        margin: 0 !important;
-        max-width: 100% !important;
-    }
+@media (max-width: 768px) {
     .member {
         flex-direction: row;
         text-align: left !important;
     }
 
-    .description {
-        align-items: center;
-    }
-
     .description img {
         max-width: 80vw;
+        max-height: 60vh;
+        padding-top: 1rem;
+    }
+
+    .description {
+        justify-content: flex-start;
     }
 
     .event-container {
@@ -303,6 +381,25 @@ footer {
     .content-collapsible {
         padding: 2rem;
     }
+
+    .column {
+        flex: 30%;
+        max-width: 50%;
+      }
+
+    .carousel-item img {
+        max-width: 100vw;
+        max-height: 70vh;
+    }
+    #myCarousel {
+        margin-top: 2rem;
+    }
+    #top {
+        padding-top: var(--navbar);
+    }
+    .cover-photo {
+        height: 75vh;
+    }
 }
 
 @media (max-width: 576px) {
@@ -311,5 +408,26 @@ footer {
         align-self: center;
         justify-content: center;
         text-align: center !important;
+        width: auto !important;
+    }
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+    .column img {
+        filter: grayscale(0) brightness(1);
+    }
+    #myCarousel {
+        margin-top: 1rem;
+    }
+    .display-1{
+        font-size: 4rem !important;
+    }
+    .display-4{
+        font-size: 2.5rem !important;
+        padding-top: 1rem;
+    }
+    #end-photo {
+        height: auto;
     }
 }
