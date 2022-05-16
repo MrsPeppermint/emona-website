@@ -74,7 +74,7 @@ $(document).ready( function() {
       var s = $(window).scrollTop() * 20,
           c = $(document).height() - $(window).height(),
           scrollPercent = (s / c),
-          opacity = (scrollPercent + 0.5).toFixed(2),
+          opacity = (scrollPercent + 0.35).toFixed(2),
           translation = (scrollPercent * 500 + 50).toFixed(2);
           
       $(".cover-photo-overlay").css("opacity", opacity);
