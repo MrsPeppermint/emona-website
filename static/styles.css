@@ -398,7 +398,8 @@ a:hover {
     }
 
     .event-container {
-        width: 80vw;
+        width: 90vw;
+        margin: auto -5vw !important ;
     }
 
     .content-collapsible {
