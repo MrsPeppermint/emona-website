@@ -403,7 +403,7 @@ a:hover {
     }
 
     .content-collapsible {
-        padding: 2rem;
+        padding: 2rem 1rem;
     }
 
     .column {
@@ -423,6 +423,10 @@ a:hover {
     }
     .cover-photo {
         height: 75vh;
+    }
+    
+    #end-photo {
+        height: auto;
     }
 }
 
@@ -451,7 +455,5 @@ a:hover {
         font-size: 2.5rem !important;
         padding-top: 1rem;
     }
-    #end-photo {
-        height: auto;
-    }
+    
 }
