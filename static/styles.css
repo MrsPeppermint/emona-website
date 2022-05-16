@@ -9,6 +9,10 @@
     --footer: 48px;
 }
 
+html {
+    padding: env(safe-area-inset);
+}
+
 body {
     position: relative;
     min-height: 100vh;
