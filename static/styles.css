@@ -9,54 +9,10 @@
     --footer: 48px;
 }
 
-.light {
-    background-color: var(--offwhite);
-    color: var(--offblue);
-    border-color: var(--offblue);
-}
-
-.dark {
-    background-color: var(--offred);
-    color: var(--offwhite);
-    border-color: var(--offwhite);
-}
-
-header, h1 {
-    font-family: 'Raleway', sans-serif !important;
-    border-bottom: solid 2px;
-}
-
-h2 {
-    font-family: 'Raleway', sans-serif !important;
-    border-bottom: solid 2px;
-    text-align: left;
-}
-
-.name {
-    font-family: 'Bonheur Royale', sans-serif !important;
-}
-
-.event h4, .event h6 {
-    font-family: 'Courier New', Courier, monospace;
-}
-
-a {
-    color: var(--offgray) !important;
-}
-
-a:hover {
-    color: var(--offorange) !important;
-}
-
-p {
-    font-family:'Nanum Gothic', 'Times New Roman', serif;
-    font-weight: 100;
-    margin: 0 !important;
-}
- 
-html{
+body {
     position: relative;
     min-height: 100vh;
+    font-family: 'Raleway', sans-serif !important;
 }
 
 .navbar {
@@ -72,12 +28,8 @@ html{
     padding-bottom: var(--footer);
 }
 
-.container {
-    padding: calc(var(--navbar) + 10px) 10% 0 10% !important;
-}
-
-.container-fluid {
-    padding: calc(var(--navbar) + 10px) 10% 0 10% !important;
+.container, .container-fluid {
+    padding: calc(var(--navbar) + 10px) 10% !important;
 }
 
 footer {
@@ -90,8 +42,59 @@ footer {
     font-size: 11px;
 }
 
+
+.light {
+    background-color: var(--offwhite);
+    color: var(--offblue);
+    border-color: var(--offblue);
+}
+
+.dark {
+    background-color: var(--offred);
+    color: var(--offwhite);
+    border-color: var(--offwhite);
+}
+
+.serif {
+    font-family: 'Playfair Display', serif !important;
+}
+
+h1 {
+    border-bottom: solid 0.2rem;
+}
+
+h2 {
+    border-bottom: solid 2px;
+    text-align: left;
+    margin-bottom: 2rem !important;
+}
+
+.name h4{
+    font-family: 'Playfair Display', serif !important;
+    font-style: italic;
+    font-size: 1.5rem !important;
+}
+
+p {
+    font-weight: 200;
+    margin: 0 !important;
+}
+
+a {
+    color: var(--offgray) !important;
+    font-weight: 200;
+}
+
+a:hover {
+    color: var(--offorange) !important;
+}
+
 /*
-* PHOTOS 
+*
+*
+* COVER and END PHOTOS 
+*
+*
 */
 
 #top {
@@ -126,7 +129,11 @@ footer {
 }
 
 /*
+*
+*
 * GALLERY
+*
+*
 */
 
 .row {
@@ -154,9 +161,12 @@ footer {
 }
 
 
-
 /* 
+*
+*
 * PROFILE PHOTOS AND BIOS 
+*
+*
 */
 
 
@@ -265,8 +275,13 @@ footer {
 }
 
 /*
+*
+*
 * EVENTS 
+*
+*
 */
+
 .event-container {
     background-color: var(--offorange);
     width: 65vw;
@@ -287,12 +302,16 @@ footer {
 }
 
 .date {
-    height: 4rem;
+    height: 5rem;
     aspect-ratio: 1;
-    justify-content: center;
+    justify-items: baseline;
     border-radius: 0.25rem;
     background-color: var(--offblue);
-    
+}
+
+.day {
+    font-size: 3rem;
+    margin: -10px 0;
 }
 
 .content-collapsible {
@@ -309,16 +328,20 @@ footer {
     gap: 1.5rem;
 }
 
-.content-collapsible > div > img {
-    height: 1.5rem;
+.icon {
+    width: 2rem; 
+    align-items: center;   
 }
 
 .composer {
     list-style-type: none;
     padding-left: 0;
 }
+
+
 .repertoire {
     list-style-type: square;
+    font-weight: 300 !important;
 }
 
 /* 
