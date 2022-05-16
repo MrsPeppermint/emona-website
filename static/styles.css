@@ -9,9 +9,6 @@
     --footer: 48px;
 }
 
-html {
-    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-}
 
 body {
     position: relative;
@@ -386,11 +383,6 @@ a:hover {
 * SCREEN SIZE ADJUSTMENT 
 */
 @media (max-width: 768px) {
-    .navbar, .container, .container-fluid {
-        padding-right: env(safe-area-inset-right);
-        padding-left: env(safe-area-inset-left);
-    }
-
     .member {
         flex-direction: row;
         text-align: left !important;
