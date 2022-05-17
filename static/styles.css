@@ -25,6 +25,11 @@ body {
     color: var(--offgray) !important;
 }
 
+.navbar-toggler {
+    border: none !important;
+    outline: none !important;
+  }
+
 #wrapper {
     padding-bottom: var(--footer);
 }
