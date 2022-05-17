@@ -205,7 +205,7 @@ a:hover {
     transform: translate(-55%, 0%) scale(0);
     z-index: 10;
     width: 100%;
-    max-height: 80vh;
+    max-height: 75vh;
     overflow-y: scroll;
     background-color: rgba(11, 16, 21, 0.9);
     text-align: justify;
